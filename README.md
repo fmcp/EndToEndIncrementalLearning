@@ -28,5 +28,6 @@ Although deep learning approaches have stood out in recent years due to their st
 4. Change required paths and parameteris in test_cifar.m and run the code to test the models.
 
 For ImageNet, you only have to change the number of classes and relative paths to the dataset.
+
 Note that the parameters that must be changed are followed by the comment '% Edit me!'
  

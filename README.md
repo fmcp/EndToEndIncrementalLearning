@@ -15,7 +15,7 @@ Although deep learning approaches have stood out in recent years due to their st
    All these libraries are required to use the code. In parentheses appears the version we have used.
    
 ### Installation:
- 1. Let's assume that you have placed this code in folder `<e2eil>`.
+ 1. Let's assume that you have placed this code in folder `<EndToEndIncrementalLearning>`.
  2. Let's assume that you have placed and installed ResNet-Matconvnet in folder `<ResNet-Matconvnet>`.
  3. Change path of ResNet-Matconvnet in startup.m
  4. Start Matlab.

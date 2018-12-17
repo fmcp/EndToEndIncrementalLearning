@@ -1,6 +1,6 @@
 function [net, derOutputs] = fork_resnet(net, varargin)
 % Based on Zhizhong Li's code
-% Medified by F. Castro for End-to-End Incremental Learning. ECCV2018
+% Modified by F. Castro for End-to-End Incremental Learning. ECCV2018
 
 opts.newtaskdim = 20; % # output of last layer
 opts.distillation_temp = 2; % distillation temperature.

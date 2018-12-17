@@ -160,7 +160,7 @@ nn = sum(lastExemplars.images.set == 1 & lastExemplars.images.labels == aux(1));
 aux2 = opts.maxExemplars;
 opts.maxExemplars = opts.maxExemplars + (opts.newtaskdim * nn);
 opts.totalClasses = length(unique(lastExemplars.images.labels)) + opts.newtaskdim;
-exemplars = build_examplars_set(lastExemplars, imdb_or, opts);
+exemplars = build_exemplars_set(lastExemplars, imdb_or, opts);
 opts.maxExemplars = aux2;
 opts.derOutputs = derOutputs;
 
@@ -292,11 +292,11 @@ opts.train.numEpochs = length(opts.train.learningRate);
 [net, info] = cnn_train_dag_exemplars(net, imdb, @getIncBatchDist, 'val', find(imdb.images.set == 3), opts.train, 'distillation', true);
 
 opts.derOutputs = derOutputs;
-[net, derOutputs] = fork_resnet_remove_distillation(net);
+[net, derOutputs] = fork_resnet_remove_distillation(net, derOutputs);
 opts.train.derOutputs = derOutputs;
 
 opts.net = net;
-exemplars = build_examplars_set(lastExemplars, imdb_or, opts);
+exemplars = build_exemplars_set(lastExemplars, imdb_or, opts);
 
 % Update output
 meta.meanval = imdb.meta.dataMean;

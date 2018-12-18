@@ -23,7 +23,7 @@ Although deep learning approaches have stood out in recent years due to their st
  
 ### Usage:
 1. Change required paths in build_imdbs.m and execute the code to generate the imdbs.
-2. Train the first model with source code of ResNet-Matconvnet but using the first imdb for each step size and iteration.
+2. Train the first model with source code of ResNet-Matconvnet but using the first imdb for each step size and iteration. Don't forget to change the number of classes of the model and parse the labels to use eqlabs like in our incremental_training.m - lines 123-133. 
 3. Change required paths and parameters in experiment_cifar.m and run the code to train the models.
 4. Change required paths and parameters in test_cifar.m and run the code to test the models.
 

@@ -1,8 +1,8 @@
-imdbs_dir = '/home/GAIT_local/SSD/cifar100_incremental/'; % Edit me!
-nets_dir = '/home/GAIT/experimentsInria/cifar100/'; % Edit me!
-sufix = '-Herding-0-2000'; % Edit me!
+imdbs_dir = ''; % Edit me!
+nets_dir = ''; % Edit me!
+sufix = '-Herding-000-2000'; % Edit me!
 
-batchs = [20]; % Edit me!
+batchs = [2]; % Edit me!
 nIters = 1; % Edit me!
 
 if ~exist('gpuId', 'var')
@@ -37,6 +37,11 @@ for nbatch_idx=1:length(batchs)
                 net = dagnn.DagNN.loadobj(net);
                 net.mode = 'test';
                 
+		% Parse labels to fit number of classes
+		if ~isfield(net.meta, 'eqlabs')
+    			net.meta.eqlabs = sort(net.meta.classes.name);
+		end
+
                 estim_labels = [];
                 labels = [];
                 for nimdb_idx=1:nblock_idx

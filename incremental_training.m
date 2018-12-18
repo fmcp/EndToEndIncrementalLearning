@@ -21,7 +21,7 @@ opts.train.derOutputs = derOutputs;
 net.meta.classes.name = cat(2, net.meta.classes.name, unique(imdb.images.classes));
 % Parse labels to fit number of classes
 if ~isfield(net.meta, 'eqlabs')
-    net.meta.eqlabs = net.meta.classes.name;
+    net.meta.eqlabs = sort(net.meta.classes.name);
 end
 
 net.meta.eqlabs = cat(2, net.meta.eqlabs, unique(imdb.images.classes)); % Add previous classes.

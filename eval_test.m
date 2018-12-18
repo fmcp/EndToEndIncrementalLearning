@@ -1,4 +1,4 @@
-function outputs = fc_evalCNN(net, imdb)
+function outputs = eval_test(net, imdb)
 
 if strcmp(net.device, 'cpu')
     net.move('gpu');

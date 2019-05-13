@@ -62,7 +62,7 @@ for nbatch_idx=1:length(batchs)
                     
                     % Build new exemplars set.
                     opts.totalClasses = batchs(nbatch_idx);
-                    exemplars = fc_buildExemplarsSetImagenet([], exemplars, opts);
+                    exemplars = build_exemplars_set_imagenet([], exemplars, opts);
                 else
                     net_pattern = sprintf('imagenet-resnet-18-batch%02d-block%02d-iter%02d-%s', batchs(nbatch_idx), nblock_idx-1, niter_idx, fix);
                     net_name = 'net-final.mat';

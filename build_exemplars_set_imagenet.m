@@ -1,4 +1,4 @@
-function imdbExemplars_ = build_exemplar_set_imagenet(lastExemplars, imdb, opts)
+function imdbExemplars_ = build_exemplars_set_imagenet(lastExemplars, imdb, opts)
 
 % New number of exemplars.
 if opts.maxExemplars ~= 0

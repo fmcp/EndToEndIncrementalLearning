@@ -169,7 +169,7 @@ if ~exist(net40, 'file')
     end
     
     % Get FC exemplars outputs.
-    outputs = fc_evalCNNSoftmax(net, imdb);
+    outputs = eval_softmax(net, imdb);
     
     % Build combined imdb.
     imdb.images.distillationLabels = outputs;
@@ -197,7 +197,7 @@ nn = sum(lastExemplars.images.set == 1 & lastExemplars.images.labels == aux(1));
 aux2 = opts.maxExemplars;
 opts.maxExemplars = opts.newtaskdim * nn;
 opts.totalClasses = opts.newtaskdim;
-exemplars = fc_buildExemplarsSetImagenet([], imdb_or, opts);
+exemplars = build_exemplars_set_imagenet([], imdb_or, opts);
 opts.totalClasses = length(unique(lastExemplars.images.labels)) + opts.newtaskdim;
 opts.maxExemplars = aux2;
 opts.derOutputs = derOutputs;
@@ -228,7 +228,7 @@ imdb.opts = opts.train;
 
 % Build combined imdb.
 % Get FC exemplars outputs.
-outputs = fc_evalCNNSoftmax(net, imdb);
+outputs = eval_softmax(net, imdb);
 imdb.images.distillationLabels = outputs;
 imdb.meta.inputs = net.getInputs();
 pos = -1;
